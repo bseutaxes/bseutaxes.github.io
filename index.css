@@ -1,0 +1,35 @@
+#op-add-form{
+    text-align: center
+}
+
+#op-tabble-body-result-row{
+    font-weight: 1200;
+}
+
+h1{
+    text-align: center;
+}
+
+#btn{
+    margin: 0 auto
+}
+
+TABLE {
+    border-collapse: collapse; 
+    margin: 0 auto;
+    width: 60%
+}
+
+#result-table{
+    width: 80%;
+}
+
+TD, TH {
+    padding: 3px; 
+    border: 1px solid black; 
+    
+}
+
+TH {
+    background: #96a5a7; /* Цвет фона */
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Протокол расчета пеней</h1>
+    
+    <br><br><br>
+    <form action="" id="op-add-form"> 
+        <label>
+            <input type="date" id="op-term" placeholder="По сроку"/>
+        </label>
+        <label>
+            <input type="text" id="op-sum" placeholder=""/ autocomplete="off" >
+        </label>
+        <br><br>
+          <button id="op-add" type="submit">Добавить операцию для расчета</button>
+          <br><br>
+          <button id="calc-btn" type="">Произвести расчет по операциям</button>
+          <!-- <button id="dataButton">DATA</button> -->
+    </form>
+    
+
+    <br><br><br><br>
+    
+    <table id="op-table">
+        <thead>
+            <tr>
+                <th>По сроку</th>
+                <th>Начислено (возвращено)</th>
+                <th>Уплачено (сторнировано)</th>
+                <th>Сальдо</th>
+                <th>X</th>
+            </tr>
+
+        </thead>
+        <tbody id="op-tabble-body">
+            <!-- <tr><td></td><td></td><td></td><td></td></tr> -->
+        </tbody>
+    </table>
+
+    <br><br><br><br>
+
+
+
+    <br><br><br>
+    <table id="result-table">
+        <thead>
+            <th>№ строки </th>
+            <th>Начало периода</th>
+            <th>Конец периода</th>
+            <th>Кол-во дней</th>
+            <th>На сумму долга</th>
+            <th>Ставка </th>
+            <th>Сумма пени </th>
+            <th>Итого (наростающим итогом)</th>
+        </thead>
+        <tbody id="result-table-body">
+            <!-- <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr> -->
+        </tbody>
+
+    </table>
+
+
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
