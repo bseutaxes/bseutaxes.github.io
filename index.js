@@ -96,12 +96,16 @@ const opAddForm = document.querySelector('#op-add-form')
 const opTerm = document.querySelector('#op-term')
 const opSum = document.querySelector('#op-sum')
 const opAdd = document.querySelector('#op-add')
+const opDel= document.querySelector('#op-del')
 const calcBtn = document.querySelector('#calc-btn')
 const opTableBody = document.querySelector('#op-tabble-body')
 const resultTableBody = document.querySelector('#result-table-body')
+const spr = document.querySelector('#spr')
 let convertedOpSum;
 let opId = -1;
 let periodsCounter = -1;
+let spr1;
+let spr2;
 
 opAdd.addEventListener('click', event =>{
     event.preventDefault();
@@ -131,6 +135,13 @@ calcBtn.addEventListener('click', event =>{
     pushPeriodsArray()
     calcPenSum()
     createResultTableBody()
+    showSpr()
+})
+
+opDel.addEventListener('click', event =>{
+    event.preventDefault()
+    opDelete()
+
 })
 
 function sortDataByTerm(){
@@ -143,10 +154,6 @@ function sortDataByTerm(){
 
 function convertOpSum(opSum){
     console.log(opSum)
-    // здесь должна делаться проверка и конвертация суммы
-    // в строке должно быть не больше 1  или точки
-    // в строке должно быть не больше 1 знака минус
-    // в строке все символы должны быть числами
 }
 
 function isValidTerm(opTerm){
@@ -205,7 +212,7 @@ function createOpTableBody(){
         <td>${(el.opSum < 0) ? replaceDotWithComer((el.opSum - el.opSum - el.opSum).toFixed(2)) : ``}</td>
         <td>${(el.opSum > 0) ? replaceDotWithComer(el.opSum.toFixed(2)) : ``}</td>
         <td>${replaceDotWithComer(el.opSaldo.toFixed(2))}</td>
-        <td><button id = ${el.opId}>❌</button></td>
+        <td><label> <input type="checkbox" id="${el.opId}"></label></td>
         </tr>`
     })
 }
@@ -324,6 +331,7 @@ function getSt(){
         x = x + el.penSum
     })
     console.log(x)
+    spr1 = x
 }
 
 function pushPeriodsArray(){
@@ -347,15 +355,13 @@ function pushPeriodsArray(){
             createPeriod()
             periodsArray[periodsCounter].push(objectToPush)
         }
-    }
-    
+    }   
 }
 
 function createPeriod(){
     periodsArray.push([])
     periodsCounter++
 }
-
 
 function calcPenSum(){
     let x = 0
@@ -381,6 +387,7 @@ function calcPenSum(){
         }
 }
 console.log(x)
+spr2 = x
 }
 
 function createResultTableBody(){
@@ -429,8 +436,8 @@ function loadSaving(unparsedJSON){
     pushPeriodsArray()
     calcPenSum()
     createResultTableBody()
+    showSpr()
 }
-
 
 function replaceDotWithComer(numberToChange){
     let x = numberToChange + ''
@@ -438,17 +445,24 @@ function replaceDotWithComer(numberToChange){
     return result
 }
 
+function opDelete(){
+    let checkedCheckboxArray = [...document.querySelectorAll('input[type=checkbox]:checked')]
+    checkedCheckboxArray.forEach(arrayElement =>{
+        let elementToDelete = data.findIndex(item => item.opId === +arrayElement.id);
+        data.splice([elementToDelete], 1)
+    })
+    sortDataByTerm()
+    countOpSaldo()
+    createOpTableBody()
+    createOpTableBodyResultRow()
+    opAddForm.reset()   
+}
 
-
-
-
-
-
-
-
-
-
-
+function showSpr(){
+    spr.innerHTML = ``
+    spr.innerHTML = `<br><br><br><br><br>СПРАВОЧНО (ДНИ): ${spr1}, 
+    <br> СПРАВОЧНО (ПЕРИОДЫ): ${spr2}, `
+}
 
 
 

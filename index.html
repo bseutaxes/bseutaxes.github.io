@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Протокол расчета пеней</h1>
-    
+    <!-- <h1>Протокол расчета пеней</h1> -->
     <br><br><br>
+
     <form action="" id="op-add-form"> 
         <label>
             <input type="date" id="op-term" placeholder="По сроку"/>
@@ -19,9 +19,10 @@
             <input type="text" id="op-sum" placeholder=""/ autocomplete="off" >
         </label>
         <br><br>
-          <button id="op-add" type="submit">Добавить операцию для расчета</button>
+          <button id="op-add" type="submit">Добавить операцию для расчета ✔️</button>
+          <button id="op-del" type="submit">Удалить выбранные операции ❌</button>
           <br><br>
-          <button id="calc-btn" type="">Произвести расчет по операциям</button>
+          <button id="calc-btn" type="">Произвести расчет по операциям 🔄</button>
           <!-- <button id="dataButton">DATA</button> -->
     </form>
     
@@ -66,7 +67,7 @@
 
     </table>
 
-
+<div id="spr"></div>
     
 
     <script src="./index.js"></script>
