@@ -4,6 +4,10 @@ const periodsArray = []
 const periodsArrayCumulativeAmount = []
 const ST= [
     {endTerm: '2999-12-31',
+    startTerm: '2022-03-01',
+    stPen: 12},
+
+    {endTerm: '2022-02-28',
     startTerm: '2021-07-21',
     stPen: 9.25},
 
