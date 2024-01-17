@@ -3,7 +3,32 @@ const countArray = []
 const periodsArray = []
 const periodsArrayCumulativeAmount = []
 const ST= [
+    
     {endTerm: '2999-12-31',
+    startTerm: '2023-06-28',
+    stPen: 9.5},
+    
+    {endTerm: '2023-06-27',
+    startTerm: '2023-05-31',
+    stPen: 9.75},
+    
+    {endTerm: '2023-05-30',
+    startTerm: '2023-05-02',
+    stPen: 10},
+    
+    {endTerm: '2023-05-01',
+    startTerm: '2023-04-03',
+    stPen: 10.5},
+    
+    {endTerm: '2023-04-02',
+    startTerm: '2023-03-01',
+    stPen: 11},
+    
+    {endTerm: '2023-02-28',
+    startTerm: '2023-01-23',
+    stPen: 11.5},
+    
+    {endTerm: '2023-01-22',
     startTerm: '2022-03-01',
     stPen: 12},
 
